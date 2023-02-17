@@ -9,11 +9,11 @@ antigen bundle docker
 # Load bundles from external repos
 antigen bundle macos
 antigen bundle djui/alias-tips
-antigen bundle mafredri/zsh-async
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle kiurchv/asdf.plugin.zsh
 
 # Select theme
 antigen theme spaceship-prompt/spaceship-prompt
