@@ -1,12 +1,12 @@
 [[ -s $HOME/envsetup.sh ]] && . $HOME/envsetup.sh
 
-# asdf ANSIBLE MANAGED BLOCK
+# asdf BEGIN ANSIBLE MANAGED BLOCK
 [[ -s $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
-# asdf ANSIBLE MANAGED BLOCK
+# asdf END ANSIBLE MANAGED BLOCK
 
-# n ANSIBLE MANAGED BLOCK
+# n BEGIN ANSIBLE MANAGED BLOCK
 [[ -s $HOME/.n ]] && export N_PREFIX=$HOME/.n
-# n ANSIBLE MANAGED BLOCK
+# n END ANSIBLE MANAGED BLOCK
 
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"

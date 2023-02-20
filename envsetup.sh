@@ -9,11 +9,11 @@
 #         ;;
 # esac
 
-# n ANSIBLE MANAGED BLOCK
+# n BEGIN ANSIBLE MANAGED BLOCK
 if [[ -s $N_PREFIX ]] && [[ ":${PATH}:" != *":$N_PREFIX/bin:"* ]]; then
     export PATH=$N_PREFIX/bin:${PATH}
 fi
-# n ANSIBLE MANAGED BLOCK
+# n END ANSIBLE MANAGED BLOCK
 
 if [[ -s /opt/homebrew/bin ]] && [[ ":${PATH}:" != *":/opt/homebrew/bin:"* ]]; then
     export PATH=/opt/homebrew/bin:${PATH}
