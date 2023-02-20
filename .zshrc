@@ -1,5 +1,4 @@
-source "$(brew --prefix)"/share/antigen/antigen.zsh
-
+source ~/.antigen/antigen.zsh
 source ~/.antigenrc
 
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
