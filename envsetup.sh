@@ -16,3 +16,7 @@ fi
 if [[ -s /usr/local/bin ]] && [[ ":${PATH}:" != *":/usr/local/bin:"* ]]; then
     export PATH=/usr/local/bin:${PATH}
 fi
+
+if [[ -s $N_PREFIX ]] && [[ ":${PATH}:" != *":$N_PREFIX/bin:"* ]]; then
+    export PATH=$N_PREFIX/bin:${PATH}
+fi
