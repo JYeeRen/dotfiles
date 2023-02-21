@@ -1,0 +1,42 @@
+# 创建临时高性能磁盘
+# 该磁盘由物理 RAM 支持，比 SSD 快几倍。磁盘弹出后无法恢复其内容。以下示例适用于 500 MiB RAM 磁盘，请根据需要进行调整。
+# Up to macOS 10.14 (Mojave)
+let DISKSIZE=500*2048 && \
+diskutil erasevolume HFS+ "RAM Disk" `hdiutil attach -nomount ram://$DISKSIZE`
+
+# From macOS 10.15 (Catalina) on
+let "DISKSIZE = 500*2048" && \
+diskutil erasevolume HFS+ "RAM Disk" `hdiutil attach -nomount ram://$DISKSIZE`
+
+# 设置计算机名/主机名
+sudo scutil --set ComputerName "newhostname" && \
+sudo scutil --set HostName "newhostname" && \
+sudo scutil --set LocalHostName "newhostname" && \
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "newhostname"
+
+# 有进度地复制大文件
+# Make sure you have pv installed and replace /dev/rdisk2 with the appropriate write device or file.
+FILE=/path/to/file.iso pv -s $(du -h $FILE | awk '/.*/ {print $1}') $FILE | sudo dd of=/dev/rdisk2 bs=1m
+
+# 将剪贴板转换为纯文本
+pbpaste | textutil -convert txt -stdin -stdout -encoding 30 | pbcopy
+
+# 复制到剪贴板
+cat whatever.txt | pbcopy
+
+# 从剪贴板复制数据
+pbpaste > whatever.txt
+
+# 从剪贴板内容中排序和去除重复行
+pbpaste | sort | uniq | pbcopy
+
+
+# 统计内存信息
+# One time
+vm_stat
+
+# Table of data, repeat 10 times total, 1 second wait between each poll
+vm_stat -c 10 1
+
+# 快速查看
+qlmanage -p /path/to/file

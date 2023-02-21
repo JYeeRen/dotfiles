@@ -20,6 +20,9 @@
 # @see: http://secrets.blacktree.com/?showapp=com.apple.finder
 # @see: https://github.com/herrbischoff/awesome-macos-command-line
 #
+# @see: https://git.herrbischoff.com/awesome-macos-command-line/about/
+# @see: https://git.herrbischoff.com/awesome-command-line-apps/about/
+#
 
 # Warn that some commands will not be run if the script is not run as root.
 if [[ $EUID -ne 0 ]]; then
@@ -112,8 +115,7 @@ defaults write com.apple.screencapture target -string "clipboard"
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
 # defaults write com.apple.finder NewWindowTarget -string "PfDe"
-defaults write com.apple.finder NewWindowTarget -string "PfHm"
-# defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
@@ -129,16 +131,17 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
-# defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
 
 # Finder: allow text selection in Quick Look
 # defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Display full POSIX path as Finder window title
-# defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# 标题栏显示完整路径
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # When performing a search, search the current folder by default
-# defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Disable the warning when changing a file extension
 # defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -151,6 +154,9 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0.1
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# 禁止在 USB 卷上创建元数据文件 .DS_Store 和 AppleDouble
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
@@ -167,7 +173,12 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Show the ~/Library folder
+# 显示 / 隐藏 ～/Library
+# chflags hidden ~/Library
 chflags nohidden ~/Library
+
+# 显示路径条
+# defaults write com.apple.finder ShowPathbar -bool true
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -181,7 +192,8 @@ defaults write com.apple.dock autohide -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
-
+# 锁定扩展坞大小
+defaults write com.apple.Dock size-immutable -bool true
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
