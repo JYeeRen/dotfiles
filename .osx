@@ -214,6 +214,9 @@ defaults write com.apple.dock showhidden -bool true
 # dock 放在左边 left | right | bottom
 defaults write com.apple.dock orientation -string "left"
 
+# 不显示最近使用的应用程序
+defaults write com.apple.dock show-recents -bool false
+
 # Enable the 'reduce transparency' option. Save GPU cycles.
 # 可能已废弃 macos 13.0+
 # defaults write com.apple.universalaccess reduceTransparency -bool true
