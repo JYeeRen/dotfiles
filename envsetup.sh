@@ -22,3 +22,7 @@ fi
 if [[ -s /usr/local/bin ]] && [[ ":${PATH}:" != *":/usr/local/bin:"* ]]; then
     export PATH=/usr/local/bin:${PATH}
 fi
+
+[[ ":${PATH}:" != *":$HOME/.npm-global/bin:"* ]]; then
+    export PATH=$HOME/.npm-global/bin:${PATH}
+fi
