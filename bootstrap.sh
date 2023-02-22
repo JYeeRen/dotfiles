@@ -23,5 +23,6 @@ if [[ ":${PATH}:" != *":$HOME/.npm-global/bin:"* ]]; then
     export PATH=$HOME/.npm-global/bin:${PATH}
 fi
 
-# ensure homebrew is before /usr/bin
-export PATH=/opt/homebrew/bin:${PATH}
+if [[ ":${PATH}:" != *":/opt/homebrew/bin:"* ]]; then
+    export PATH=/opt/homebrew/bin:${PATH}
+fi
