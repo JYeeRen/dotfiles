@@ -2,3 +2,9 @@
 # MAC #
 #######
 alias icloud="cd /Library/Mobile\ Documents/com~apple~CloudDocs/"
+alias gsd="git diff | git-split-diffs --color | less -RFX"
+alias code="open -a /Applications/Visual\ Studio\ Code.app"
+alias qrcp="~/go/bin/qrcp --keep-alive"
+alias showip="curl cip.cc"
+
+alias pwd="LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy"
