@@ -1,6 +1,6 @@
 # antigen BEGIN ANSIBLE MANAGED BLOCK
-[[ -s $HOME/.antigen/antigen.zsh ]] && source $HOME/.antigen/antigen.zsh
-[[ -s $HOME/.antigenrc ]] && source $HOME/.antigenrc
+[[ -s $HOME/antigen/antigen.zsh ]] && source $HOME/antigen/antigen.zsh
+[[ -s $HOME/antigen/antigen.zsh ]] && [[ -s $HOME/.antigenrc ]] && source $HOME/.antigenrc
 # antigen END ANSIBLE MANAGED BLOCK
 
 [[ -s $HOME/.aliasesrc ]] && source $HOME/.aliasesrc
