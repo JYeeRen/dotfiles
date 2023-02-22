@@ -2,7 +2,7 @@
 [[ -s $HOME/.n ]] && export N_PREFIX=$HOME/.n
 # n END ANSIBLE MANAGED BLOCK
 
-[[ -s $HOME/envsetup.sh ]] && . $HOME/envsetup.sh
+[[ -s $HOME/Documents/envsetup.sh ]] && . $HOME/Documents/envsetup.sh
 
 # asdf BEGIN ANSIBLE MANAGED BLOCK
 [[ -s $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh

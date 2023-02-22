@@ -15,14 +15,17 @@ if [[ -s $N_PREFIX ]] && [[ ":${PATH}:" != *":$N_PREFIX/bin:"* ]]; then
 fi
 # n END ANSIBLE MANAGED BLOCK
 
-if [[ -s /opt/homebrew/bin ]] && [[ ":${PATH}:" != *":/opt/homebrew/bin:"* ]]; then
-    export PATH=/opt/homebrew/bin:${PATH}
-fi
-
 if [[ -s /usr/local/bin ]] && [[ ":${PATH}:" != *":/usr/local/bin:"* ]]; then
     export PATH=/usr/local/bin:${PATH}
 fi
 
-[[ ":${PATH}:" != *":$HOME/.npm-global/bin:"* ]]; then
+# if [[ -s /opt/homebrew/bin ]] && [[ ":${PATH}:" != *":/opt/homebrew/bin:"* ]]; then
+#     export PATH=/opt/homebrew/bin:${PATH}
+# fi
+
+# ensure homebrew is before /usr/bin
+export PATH=/opt/homebrew/bin:${PATH}
+
+if [[ ":${PATH}:" != *":$HOME/.npm-global/bin:"* ]]; then
     export PATH=$HOME/.npm-global/bin:${PATH}
 fi
