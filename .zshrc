@@ -15,6 +15,9 @@ zplug load
 
 [[ -s $HOME/.aliasesrc ]] && source $HOME/.aliasesrc
 
+bindkey '^ ' autosuggest-accept
+bindkey -M emacs '^p' history-substring-search-up
+bindkey -M emacs '^n' history-substring-search-down
 
 # export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 # export PATH=$PATH:$ANDROID_SDK_ROOT/emulator

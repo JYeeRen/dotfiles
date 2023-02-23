@@ -8,3 +8,5 @@ alias qrcp="~/go/bin/qrcp --keep-alive"
 alias showip="curl cip.cc"
 
 alias pwd="LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy"
+
+alias zshrefresh="source ~/.zshrc"

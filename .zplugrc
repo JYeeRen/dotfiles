@@ -3,8 +3,10 @@ source $HOME/.zplug/init.zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
+# (defer:2 means syntax-highlighting gets loaded after completions)
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# (defer:3 means history-substring search gets loaded after syntax-highlighting)
+zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "djui/alias-tips"
